@@ -2,9 +2,11 @@ import React from "react"
 import { Provider } from "react-redux"
 import { ConnectedRouter } from "connected-react-router"
 
-import "./App.css"
-import Main from "./route"
 import configureStore, { history } from "./store"
+
+import "./App.css"
+import Route from "./route"
+import Layout from "./containers/Layout"
 
 const store = configureStore()
 
@@ -13,7 +15,7 @@ function App() {
     <div className="App">
       <Provider store={store}>
         <ConnectedRouter history={history}>
-          <Main />
+          <Layout Route={Route} />
         </ConnectedRouter>
       </Provider>
     </div>
